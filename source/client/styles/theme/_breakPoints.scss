@@ -1,0 +1,7 @@
+$breakpoints: (
+'small-medium': '(min-width: 768px) and (max-width: 1024px)',
+'medium-large': '(min-width: 1024px) and (max-width: 1280px)',
+'small': '(min-width: 768px)',
+'medium': '(min-width: 1024px)',
+'large': '(min-width: 1280px)'
+);

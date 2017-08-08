@@ -1,0 +1,22 @@
+{
+  "presets": [
+    ["env", {
+      "modules": false,
+      "development": {
+        "presets": ["react-hmre"],
+        "plugins": [
+          ["react-transform", {
+            "transforms": [{
+              "transform": "react-transform-hmr",
+              "imports": ["react"],
+              "locals": ["module"]
+            }]
+          }]
+        ]
+      }
+    }],
+    "es2015",
+    "react",
+    "stage-0"
+  ]
+}
