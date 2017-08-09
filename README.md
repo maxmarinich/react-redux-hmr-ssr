@@ -1,2 +1,39 @@
 # React Redux HMR SSR
-## React Redux Hot Module Reloading Server Side Rendering Starter Kit
+## [_Isomorphic_](http://isomorphic.net/) web app boilerplate.
+
+This is a simple boilerplate for web
+development built on  [React](https://facebook.github.io/react/) and [Redux](http://redux.js.org/)
+, containing modern web development
+tools:
+* React
+* Redux
+* [React Router Redux](https://github.com/ReactTraining/react-router/tree/master/packages/react-router-redux) ( Integration with [React Router v4](https://github.com/ReactTraining/react-router/tree/master/packages/react-router-redux) and Redux)
+* [React Router Config](https://github.com/ReactTraining/react-router/tree/master/packages/react-router-config) ( Static route config helpers )
+* [Webpack v3](https://webpack.js.org)
+* [Babel](https://babeljs.io/)
+* [Express](http://expressjs.com)
+* [Nmp](https://www.npmjs.com/) package + [Node.js](https://nodejs.org/) v6.* or newer
+
+### _Goals_
+
+* Isomorphic App: - application that can run both client-side and server-side
+* Hot Module Reloading: - Replaces modules that have been changed in real time while preserving the state
+* Server Side Rendering: - Renders Pages on the initial for fast page loads and search engine optimization
+* Code Splitting: - Split code into bundles so that code is asynchronously loaded by the client.
+* Development / Production Mods
+
+## How to use
+##### clone the project
+```shell
+$ git clone https://github.com/maxmarinich/react-redux-hmr-ssr.git
+```
+##### install dependencies
+```shell
+npm i
+```
+
+##### run
+```shell
+npm start
+```
+Dev server will listening on [`http://localhost:3000`](http://localhost:3000/)
