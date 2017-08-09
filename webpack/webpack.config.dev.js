@@ -8,16 +8,16 @@ const PORT = 3000;
 const config = {
   context: path.resolve(__dirname, '../source/client'),
   target: 'web',
-	entry: [
+  entry: [
     'react-hot-loader/patch',
     `webpack-dev-server/client?http://localhost:${PORT}`,
     'webpack/hot/only-dev-server',
     './index.js'
-	],
+  ],
   devServer: {
     proxy: {
       '**': {
-        target: `http://localhost:3001`,
+        target: 'http://localhost:3001',
         secure: false
       }
     },
@@ -31,11 +31,11 @@ const config = {
     path: __dirname + '../public',
     filename: 'assets/bundle.js'
   },
-	module: {
-		rules: [
-			{
+  module: {
+    rules: [
+      {
         test: /\.(scss|sass)$/,
-				include: path.resolve(__dirname, '../source/client/styles'),
+        include: path.resolve(__dirname, '../source/client/styles'),
         use: [
           {
             loader: 'style-loader',
@@ -50,18 +50,18 @@ const config = {
             loader: 'postcss-loader'
           }
         ]
-			}
-		]
-	},
-	plugins: [
+      }
+    ]
+  },
+  plugins: [
     new webpack.optimize.OccurrenceOrderPlugin(),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoEmitOnErrorsPlugin(),
-    // prints more readable module names in the browser console on HMR updates
+    new webpack.NamedModulesPlugin(),
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('development')
     })
-	]
+  ]
 };
 
 module.exports = merge(baseConfig, config);

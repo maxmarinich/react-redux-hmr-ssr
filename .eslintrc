@@ -12,7 +12,9 @@
     "max-len": 0,
     "comma-dangle": 0,
     "semi": 2,
-    "indent": [2, 2],
+    "indent": [
+      2, 2, { "SwitchCase": 1 }
+    ],
     "no-debugger": 0,
     "no-console": 0,
     "new-cap": 0,
