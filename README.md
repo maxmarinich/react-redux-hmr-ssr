@@ -23,17 +23,24 @@ tools:
 * Development / Production Mods.
 
 ## How to use
-##### clone the project
+##### _clone the project_
 ```shell
 $ git clone https://github.com/maxmarinich/react-redux-hmr-ssr.git
 ```
-##### install dependencies
+##### _install dependencies_
 ```shell
 npm i
 ```
 
-##### run
+##### _run_
+For Development (HMR, SSR)
 ```shell
 npm start
 ```
-Dev server will listening on [`http://localhost:3000`](http://localhost:3000/)
+* Dev server will listening on [`http://localhost:3000`](http://localhost:3000)
+
+For Production (SSR)
+
+```shell
+npm run start:prod
+```
