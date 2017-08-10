@@ -16,11 +16,11 @@ tools:
 
 ### _Goals_
 
-* Isomorphic App: - application that can run both client-side and server-side
-* Hot Module Reloading: - Replaces modules that have been changed in real time while preserving the state
-* Server Side Rendering: - Renders Pages on the initial for fast page loads and search engine optimization
-* Code Splitting: - Split code into bundles so that code is asynchronously loaded by the client.
-* Development / Production Mods
+* Isomorphic App - application that can run both client-side and server-side.
+* Hot Module Reloading - replaces modules that have been changed in real time while preserving the state.
+* Server Side Rendering: - renders pages on the initial stage for fast page loads and search engine optimization.
+* Code Splitting: - split code into bundles so that code is asynchronously loaded by the client.
+* Development / Production Mods.
 
 ## How to use
 ##### clone the project
