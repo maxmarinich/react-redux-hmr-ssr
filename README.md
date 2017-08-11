@@ -25,7 +25,7 @@ tools:
 ## How to use
 ##### _clone the project_
 ```shell
-$ git clone https://github.com/maxmarinich/react-redux-hmr-ssr.git
+git clone https://github.com/maxmarinich/react-redux-hmr-ssr.git
 ```
 ##### _install dependencies_
 ```shell
