@@ -1,5 +1,5 @@
 {
-  "name": "react-redux-router-v4-ssr-kit",
+  "name": "react-redux-hmr-ssr",
   "version": "1.0.0",
   "description": "isomorphic react-redux server-side-rendering hot-reload boilerplate",
   "main": "",
@@ -60,7 +60,7 @@
     "webpack": "^3.4.1",
     "webpack-merge": "^4.1.0"
   },
-  "devDependencies": {,
+  "devDependencies": {
     "concurrently": "^3.5.0",
     "nodemon": "^1.11.0",
     "webpack-dev-server": "^2.6.1"
