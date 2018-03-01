@@ -1,10 +1,9 @@
-import express from 'express';
-
 import React from 'react';
-import { renderToString } from 'react-dom/server';
+import express from 'express';
+import { Provider } from 'react-redux';
+import { renderToNodeStream } from 'react-dom/server';
 import StaticRouter from 'react-router-dom/StaticRouter';
 import { matchRoutes, renderRoutes } from 'react-router-config';
-import { Provider } from 'react-redux';
 
 import routes from '../client/app/routes';
 import configureStore from '../client/app/store/configureStore';
@@ -17,12 +16,12 @@ router.get('*', (req, res) => {
 
   const promises = branch.map(({route}) => {
     let fetchData = route.component.fetchData;
-    return fetchData instanceof Function ? fetchData(store) : Promise.resolve(null)
+    return fetchData instanceof Function ? fetchData(store) : Promise.resolve(null);
   });
 
   return Promise.all(promises).then(() => {
     const context = {};
-    const html = renderToString(
+    const html = renderToNodeStream(
       <Provider store={ store }>
         <StaticRouter location={req.url} context={ context }>
           { renderRoutes(routes) }
