@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 
 
 export default class About extends React.PureComponent {
@@ -7,6 +7,6 @@ export default class About extends React.PureComponent {
       <section className="s-about">
         <h1>About Page</h1>
       </section>
-    );
+    )
   }
 }

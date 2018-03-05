@@ -11,7 +11,9 @@
   "rules": {
     "max-len": 0,
     "comma-dangle": 0,
-    "semi": 2,
+    "semi": [
+      "error", "never"
+    ],
     "indent": [
       2, 2, { "SwitchCase": 1 }
     ],
