@@ -5,6 +5,7 @@
   "main": "",
   "scripts": {
     "test": "test",
+    "lint:eslint": "eslint --ext=.js --ext=.jsx source/client",
     "start": "concurrently --kill-others \"npm run start:proxy\" \"npm run start:dev\"",
     "start:dev": "webpack-dev-server --open",
     "start:proxy": "nodemon source/server/server.config.dev.js",
@@ -12,6 +13,9 @@
     "build:dist": "npm run build:assets && rm -rf dist/ && babel source/ -d dist/",
     "build:assets": "cross-env NODE_ENV=production webpack"
   },
+  "pre-commit": [
+    "lint:eslint"
+  ],
   "repository": {
     "type": "git",
     "url": ""
@@ -63,6 +67,7 @@
   "devDependencies": {
     "concurrently": "^3.5.0",
     "nodemon": "^1.11.0",
+    "pre-commit": "^1.2.2",
     "webpack-dev-server": "^2.6.1"
   }
 }
