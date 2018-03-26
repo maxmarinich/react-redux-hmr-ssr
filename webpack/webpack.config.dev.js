@@ -1,8 +1,8 @@
-const path = require('path');
-const webpack = require('webpack');
-const merge = require('webpack-merge');
-const baseConfig = require('./webpack.config.base');
-const PORT = process.env.PORT || 3000;
+const path = require('path')
+const webpack = require('webpack')
+const merge = require('webpack-merge')
+const baseConfig = require('./webpack.config.base')
+const PORT = process.env.PORT || 3000
 
 
 const config = {
@@ -62,6 +62,6 @@ const config = {
       'process.env.NODE_ENV': JSON.stringify('development')
     })
   ]
-};
+}
 
-module.exports = merge(baseConfig, config);
+module.exports = merge(baseConfig, config)
