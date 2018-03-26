@@ -1,7 +1,7 @@
 import React from 'react'
 import express from 'express'
 import { Provider } from 'react-redux'
-import { renderToNodeStream } from 'react-dom/server'
+import { renderToString } from 'react-dom/server'
 import StaticRouter from 'react-router-dom/StaticRouter'
 import { matchRoutes, renderRoutes } from 'react-router-config'
 
@@ -21,7 +21,7 @@ router.get('*', (req, res) => {
 
   return Promise.all(promises).then(() => {
     const context = {}
-    const html = renderToNodeStream(
+    const html = renderToString(
       <Provider store={ store }>
         <StaticRouter location={req.url} context={ context }>
           { renderRoutes(routes) }
@@ -36,8 +36,8 @@ router.get('*', (req, res) => {
     }
     res.render('index', {
       html,
-      title: 'React Redux HMR SSR Starter Kit',
       state: store.getState(),
+      title: 'React Redux HMR SSR Starter Kit',
       production: process.env.NODE_ENV === 'production' })
   })
 })
