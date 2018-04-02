@@ -1,3 +1,9 @@
+/*
+* comment out for css-modules support
+*
+* require('./babel.register')
+* */
+
 const path = require('path')
 const express = require('express')
 const bodyParser = require('body-parser')
