@@ -30,6 +30,19 @@ git clone https://github.com/maxmarinich/react-redux-hmr-ssr.git
 
 ### _Note_
 * To support `css-modules`, uncomment the code at the beginning of the ` source/server/server.config.prod.js `
+* To avoid errors, connect the modules something like as follows (_with the file extension specifying_):
+```javascript
+  // for .js files
+  
+  import './styles/index.sass'
+  import 'styles/index.sass' // if use aliases   
+  
+  // for .scss|sass files
+  
+  @import('./styles/index.sass')   
+  @import ('~styles/index.sass') // if use aliases
+  
+```
 
 ##### _install dependencies_
 ```shell

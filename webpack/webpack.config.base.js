@@ -1,9 +1,14 @@
 const path = require('path')
-const webpack = require('webpack')
 
 module.exports = {
   context: path.resolve(__dirname, '../source/client'),
   target: 'web',
+  stats: {
+    assets: true
+  },
+  resolve: {
+    alias: require('../config/aliases'),
+  },
   module: {
     rules: [
       {

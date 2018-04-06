@@ -1,7 +1,7 @@
 /*
 * comment out for css-modules support
 *
-* require('./babel.register')
+* require('../../config/babel.register')
 * */
 
 const path = require('path')

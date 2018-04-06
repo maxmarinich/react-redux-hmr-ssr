@@ -35,7 +35,6 @@ const config = {
     rules: [
       {
         test: /\.(scss|sass)$/,
-        include: path.resolve(__dirname, '../source/client/styles'),
         use: [
           {
             loader: 'style-loader',
@@ -44,11 +43,11 @@ const config = {
             loader: 'css-loader',
           },
           {
-            loader: 'sass-loader'
+            loader: 'postcss-loader'
           },
           {
-            loader: 'postcss-loader'
-          }
+            loader: 'sass-loader'
+          },
         ]
       }
     ]

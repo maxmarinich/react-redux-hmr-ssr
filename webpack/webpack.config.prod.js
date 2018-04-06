@@ -22,7 +22,6 @@ const config = {
     rules: [
       {
         test: /\.(scss|sass)$/,
-        include: path.resolve(__dirname, '../source/client/styles'),
         use: extractCss.extract([
           {
             loader: 'css-loader',

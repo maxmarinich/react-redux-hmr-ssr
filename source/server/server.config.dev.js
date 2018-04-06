@@ -1,4 +1,4 @@
-require('./babel.register')
+require('../../config/babel.register')
 
 const path = require('path')
 const express = require('express')
@@ -20,7 +20,7 @@ app.use('/', routes)
 app.listen(port, error => {
   error
     ? console.error(error)
-    : console.info(`==> 🌎  Proxy server listen on port ${port}.`)
+    : console.info(`==> 🌎 Proxy server listen on port ${port}.`)
 })
 
 function setGlobalScope(scope) {
