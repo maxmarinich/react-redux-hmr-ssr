@@ -41,5 +41,6 @@ jspm_packages
 
 # build files
 public/assets
+dist
 
 .DS_Store
