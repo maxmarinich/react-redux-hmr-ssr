@@ -15,7 +15,7 @@ router.get('*', (req, res) => {
   const branch = matchRoutes(routes, req.url)
 
   const promises = branch.map(({route}) => {
-    let fetchData = route.component.fetchData
+    let fetchData = route.component && route.component.fetchData
     return fetchData instanceof Function ? fetchData(store) : Promise.resolve(null)
   })
 
