@@ -2,6 +2,7 @@ const path = require('path')
 const webpack = require('webpack')
 const merge = require('webpack-merge')
 const baseConfig = require('./webpack.config.base')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 const PRODUCTION = 'production'
@@ -33,7 +34,11 @@ const config = {
             loader: 'postcss-loader'
           }
         ]),
-      }
+      },
+      {
+        test: /\.pug$/,
+        loader: 'pug-loader',
+      },
     ]
   },
   plugins: [
@@ -48,6 +53,13 @@ const config = {
         drop_debugger: true,
         dead_code: true
       }
+    }),
+    new HtmlWebpackPlugin({
+      inject: false,
+      template: path.join(__dirname, '../', 'views', 'index.pug'),
+      templateParameters: {
+        title: 'React Redux HMR SSR Starter Kit',
+      },
     }),
     extractCss,
   ],

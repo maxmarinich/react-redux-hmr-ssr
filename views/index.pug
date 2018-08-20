@@ -13,5 +13,5 @@ html
   body
     #root!= html || 'root'
     script.
-      window.__PRELOADED_STATE__ = !{JSON.stringify(state).replace(/</g, '\\u003c')}
+      window.__PRELOADED_STATE__ = !{JSON.stringify(state || {}).replace(/</g, '\\u003c')}
     script(type="text/javascript" src="/assets/bundle.js")
