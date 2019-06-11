@@ -59,7 +59,7 @@ const config = {
     new webpack.NamedModulesPlugin(),
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('development')
-    })
+    }),
   ]
 }
 
