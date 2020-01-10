@@ -7,12 +7,16 @@ development built on  [React](https://facebook.github.io/react/) and [Redux](htt
 tools:
 * React
 * Redux
-* [React Router Redux](https://github.com/ReactTraining/react-router/tree/master/packages/react-router-redux) ( Integration with [React Router v4](https://github.com/ReactTraining/react-router/tree/master/packages/react-router-redux) and Redux)
+* [Connected React Router](https://github.com/supasate/connected-react-router) ( Integration with [React Router v4/v5](https://github.com/ReactTraining/react-router/tree/master/packages/react-router-redux) and Redux)
 * [React Router Config](https://github.com/ReactTraining/react-router/tree/master/packages/react-router-config) ( Static route config helpers )
-* [Webpack v3](https://webpack.js.org)
+* [Webpack v4](https://webpack.js.org)
 * [Babel](https://babeljs.io/)
-* [Express](http://expressjs.com)
-* [Nmp](https://www.npmjs.com/) package + [Node.js](https://nodejs.org/) v6.* or newer
+* [Koa](https://koajs.com/)
+* [Node.js](https://nodejs.org/) v7.6.0 or higher
+
+
+#### Previous version 
+* __v1.0.0__ is [here](https://github.com/maxmarinich/react-redux-hmr-ssr/tree/express) (React Router Redux, Express ...)
 
 ### _Goals_
 
@@ -29,8 +33,7 @@ git clone https://github.com/maxmarinich/react-redux-hmr-ssr.git
 ```
 
 ### _Note_
-* To support `css-modules`, uncomment the code at the beginning of the ` source/server/server.config.prod.js `
-* To avoid errors, connect the modules something like as follows (_with the file extension specifying_):
+* To avoid errors, connect `css` modules something like as follows (_with the file extension specifying_):
 ```javascript
   // for .js files
   

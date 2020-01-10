@@ -1,13 +1,13 @@
 const path = require('path')
 const webpack = require('webpack')
 const merge = require('webpack-merge')
-const baseConfig = require('./webpack.config.base')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const ExtractCssPlugin = require('mini-css-extract-plugin')
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+
+const baseConfig = require('./webpack.config.base')
 
 const PRODUCTION = 'production'
-
-const extractCss = new ExtractTextPlugin('style.css')
 
 const config = {
   entry: [
@@ -23,7 +23,10 @@ const config = {
     rules: [
       {
         test: /\.(scss|sass)$/,
-        use: extractCss.extract([
+        use: [
+          {
+            loader: ExtractCssPlugin.loader,
+          },
           {
             loader: 'css-loader',
           },
@@ -33,7 +36,7 @@ const config = {
           {
             loader: 'postcss-loader'
           }
-        ]),
+        ],
       },
       {
         test: /\.pug$/,
@@ -45,15 +48,6 @@ const config = {
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify(PRODUCTION)
     }),
-    new webpack.optimize.UglifyJsPlugin({
-      compress: {
-        warnings: false,
-        drop_console: true,
-        unsafe: true,
-        drop_debugger: true,
-        dead_code: true
-      }
-    }),
     new HtmlWebpackPlugin({
       inject: false,
       template: path.join(__dirname, '../', 'views', 'index.pug'),
@@ -61,8 +55,11 @@ const config = {
         title: 'React Redux HMR SSR Starter Kit',
       },
     }),
-    extractCss,
+    new ExtractCssPlugin(),
   ],
+  optimization: {
+    minimizer: [new UglifyJsPlugin()]
+  },
 }
 
 module.exports = merge(baseConfig, config)

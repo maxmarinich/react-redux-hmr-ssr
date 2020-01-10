@@ -1,20 +1,19 @@
 import React from 'react'
 import { Provider } from 'react-redux'
 import { renderRoutes } from 'react-router-config'
-import BrowserRouter from 'react-router-dom/BrowserRouter'
+import { ConnectedRouter } from 'connected-react-router'
 
 import routes from './routes'
 import configureStore from './store/configureStore'
 
-
-const store = configureStore(window.__PRELOADED_STATE__)
+const { store, history } = configureStore()
 
 const AppRouter = () => {
   return (
-    <Provider store={ store }>
-      <BrowserRouter>
-        { renderRoutes(routes) }
-      </BrowserRouter>
+    <Provider store={store}>
+      <ConnectedRouter history={history}>
+        {renderRoutes(routes)}
+      </ ConnectedRouter >
     </Provider>
   )
 }

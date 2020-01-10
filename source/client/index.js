@@ -1,7 +1,8 @@
 import 'babel-polyfill'
-import './styles/styles.sass'
 import React from 'react'
 import ReactDOM  from 'react-dom'
+
+import './styles/styles.sass'
 import AppRouter from './app/AppRouter'
 
 

@@ -1,11 +1,13 @@
+import { combineReducers } from 'redux'
+import { connectRouter } from 'connected-react-router'
+
 import menuIsOpen from './sideMenu'
 import loader from './loader'
 
-import { combineReducers } from 'redux'
-import { routerReducer } from 'react-router-redux'
-
-export default combineReducers({
-  router: routerReducer,
+const createRootReducer = (history) => combineReducers({
+  router: connectRouter(history),
   menuIsOpen,
   loader,
 })
+
+export default createRootReducer

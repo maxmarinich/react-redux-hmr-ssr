@@ -1,9 +1,11 @@
 const path = require('path')
 const webpack = require('webpack')
 const merge = require('webpack-merge')
-const baseConfig = require('./webpack.config.base')
-const PORT = process.env.PORT || 3000
 
+const baseConfig = require('./webpack.config.base')
+
+const PORT = process.env.DEV_SERVER_PORT || 3000
+const PROXY_SERVER_PORT = process.env.PROXY_SERVER_PORT || 3001
 
 const config = {
   context: path.resolve(__dirname, '../source/client'),
@@ -17,7 +19,7 @@ const config = {
   devServer: {
     proxy: {
       '**': {
-        target: 'http://localhost:3001',
+        target: `http://localhost:${PROXY_SERVER_PORT}`,
         secure: false
       }
     },
@@ -29,7 +31,7 @@ const config = {
   },
   output: {
     path: __dirname + '../public',
-    filename: 'assets/bundle.js'
+    filename: 'assets/bundle.js',
   },
   module: {
     rules: [
