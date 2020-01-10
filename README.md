@@ -59,6 +59,7 @@ If `nodemon` not installed (for dev only)
 
 ```shell
 npm i nodemon -g
+npm start
 ```
 else
 
