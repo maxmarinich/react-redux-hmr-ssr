@@ -54,6 +54,14 @@ npm i
 
 ##### _run_
 For Development (HMR, SSR)
+
+If `nodemon` not installed (for dev only)
+
+```shell
+npm i nodemon -g
+```
+else
+
 ```shell
 npm start
 ```
