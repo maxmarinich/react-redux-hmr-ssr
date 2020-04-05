@@ -66,7 +66,7 @@ else
 ```shell
 npm start
 ```
-* Dev server will listening on [`http://localhost:3000`](http://localhost:3000)
+* Dev server will listen on [`http://localhost:3000`](http://localhost:3000)
 
 For Production (SSR)
 
